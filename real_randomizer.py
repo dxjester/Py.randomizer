@@ -17,3 +17,9 @@ seed(6)
 size = int(input("Enter a number: "))
 values = randint(0, 10, size)
 print(values)
+
+
+print("Array multiplied by ", size, " is ", values*6)
+print("The mean of the array is ", values.mean())
+print("The variance of the array is ", values.var())
+print("The standard deviation of the array is ", values.std())
