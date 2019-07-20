@@ -14,12 +14,26 @@ from numpy.random import randint
 
 seed(6)
 
-size = int(input("Enter a number: "))
-values = randint(0, 10, size)
-print(values)
-
-
-print("Array multiplied by ", size, " is ", values*6)
-print("The mean of the array is ", values.mean())
-print("The variance of the array is ", values.var())
-print("The standard deviation of the array is ", values.std())
+class int_array:
+    def __init__(self):
+        self.size = 0
+        self.values = []
+        self.meean = 0
+        self.standard_dev = 0
+        self.variance = 0
+    def set_size(self):
+        self.size = int(input("Enter a number: "))
+        self.values = randint(0, 10, self.size)
+        self.mean = self.values.mean()
+        self.standard_dev = self.values.std()
+        self.variance = self.values.var()
+    def print_array(self):
+        print(self.values)
+        print("Array multiplied by ", self.size, " is ", self.values*self.size)
+        print("The mean of the array is ", self.mean)
+        print("The variance of the array is ", self.variance)
+        print("The standard deviation of the array is ", self.standard_dev)
+        
+initial_array = int_array()
+initial_array.set_size()        
+initial_array.print_array()
