@@ -48,6 +48,34 @@ class int_array:
         print("The variance of the array is ", self.variance)
         print("The standard deviation of the array is ", self.standard_dev)
 
+        
+# 1.2 Declare fixed list values -----------------------------------------#
+project_list = {
+'project_alpha',
+'project_beta',
+'project_charlie', 
+'project_delta',
+'project_echo'}
+
+tradecraft_list = {
+'tradecraft_scaffold',
+'tradecraft_insulation',
+'tradecraft_abrasion', 
+'tradecraft_fireproof',
+'tradecraft_carpentry',
+'tradecraft_roofing',
+'tradecraft_construction',
+'tradecraft_piping', 
+'tradecraft_hvac',
+'tradecraft_blasting',
+'tradecraft_shoring',
+'tradecraft_formwork',
+'tradecraft_labor', 
+'tradecraft_project_management',
+'tradecraft_blasting',
+}
+
+
 #-------------------------- PHASE 2 -----------------------------#
 #---------------------- Script Execution ------------------------#
 #----------------------------------------------------------------#
