@@ -48,10 +48,14 @@ class int_array:
         print("The variance of the array is ", self.variance)
         print("The standard deviation of the array is ", self.standard_dev)
 
-# 2.1 Script Execution Start -----------------------------------------#
+#-------------------------- PHASE 2 -----------------------------#
+#---------------------- Script Execution ------------------------#
+#----------------------------------------------------------------#
+
+# 2.1 Script Execution Start ------------------------------------#
 initial_array = int_array()
 initial_array.calculate()        
 initial_array.print_array()
 
-# 2.2 Plotting -----------------------------------------#
+# 2.2 Plotting --------------------------------------------------#
 initial_array.hist_plot()
