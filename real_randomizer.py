@@ -53,4 +53,5 @@ initial_array = int_array()
 initial_array.calculate()        
 initial_array.print_array()
 
-
+# 2.2 Plotting -----------------------------------------#
+initial_array.hist_plot()
