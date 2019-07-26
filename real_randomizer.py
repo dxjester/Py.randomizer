@@ -23,36 +23,54 @@ from numpy.random import randint
 # 1.1 Declare the class -----------------------------------------#
 
 #seed(6)
+#-------------------------- PHASE 1 -----------------------------#
+#---------------------- Class Definition ------------------------#
+#----------------------------------------------------------------#
+
+# 1.1 Declare the class -----------------------------------------#
+#seed(6)
+
 
 class int_array:
+    
     def __init__(self):
         self.size = int(input("Enter a number: "))
-        self.master_df = pd.DataFrame(index = np.arange(self.size), columns=['timesheet_date','timestamp','st_hours', 'ot_hours', 'dt_hours', 'total_hours'])
-        self.master_df['timesheet_date'] = datetime.datetime.now()
-        self.master_df['timestamp'] = datetime.datetime.now()
+        self.master_df = pd.DataFrame(index = np.arange(self.size), columns=['timesheet_date','timestamp_full','st_hours', 'ot_hours', 'dt_hours', 'total_hours'])
+        
+        self.master_df['timesheet_date'] = datetime.datetime.today()
+        self.master_df['timestamp_full'] = datetime.datetime.now()
+        
         self.master_df['st_hours'] = np.random.randint(0,8,size=(self.size, 1))
         self.master_df['ot_hours'] = np.random.randint(0,8,size=(self.size, 1))
         self.master_df['dt_hours'] = np.random.randint(0,8,size=(self.size, 1))
+        
         self.mean = 0
         self.standard_dev = 0
         self.variance = 0
+        
     def calculate(self):
         self.master_df['total_hours'] = self.master_df['st_hours'] + self.master_df['ot_hours'] + self.master_df['dt_hours']
         self.master_df['timesheet_date'] = datetime.datetime.now()
         self.master_df['timestamp'] = datetime.datetime.now()
-        self.mean = self.master_df['total_hours'].mean()
+        
+        self.mean = self.master_df['total_hours'].mean() 
+        self.mean = '%.2f' % self.mean
+        
         self.standard_dev = self.master_df['total_hours'].std()
+        self.standard_dev = '%.2f' % self.standard_dev
+        
         self.variance = self.master_df['total_hours'].var()
-        self.variance = self.master_df['total_hours'].var()
-        self.variance = self.master_df['total_hours'].var()
+        self.variance = '%.2f' % self.variance
+        
     def hist_plot(self):
         plt.hist(self.master_df['total_hours'])
+        
     def print_array(self):
         print(self.master_df)
         print("The mean of of 'total_hours' is ", self.mean)
         print("The variance of the 'total_hours' is ", self.variance)
         print("The standard deviation of the 'total_hours' is ", self.standard_dev)
-
+        
         
 # 1.2 Declare fixed list values -----------------------------------------#
 project_list = {
