@@ -4,7 +4,7 @@
 \red14\green110\blue109;}
 {\*\expandedcolortbl;;\cssrgb\c20000\c20000\c20000;\cssrgb\c97255\c97255\c97255;\cssrgb\c0\c52549\c70196;
 \cssrgb\c0\c50196\c50196;}
-\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\margl1440\margr1440\vieww23060\viewh8400\viewkind0
 \deftab720
 \pard\pardeftab720\partightenfactor0
 
@@ -13,39 +13,36 @@ CREATE
 \f1\b0  
 \f0\b TABLE
 \f1\b0  budget_table (\
-  
-\f0\b key VARCHAR(100),
-\f1\b0 \
   project \cf4 VARCHAR\cf2 (\cf5 50\cf2 ),\
   subproject \cf4 VARCHAR\cf2 (\cf5 50\cf2 ),\
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb3   rca \cf4 VARCHAR\cf2 (\cf5 50\cf2 ),\
+  rca \cf4 VARCHAR\cf2 (\cf5 50\cf2 ),\
   program_title \cf4 VARCHAR\cf2 (\cf5 50\cf2 ),\
-  yr+3_forecast real,\
-  yr+2_forecast real,\
-  yr+1_forecast real,\
+  yr3_forecast real,\
+  yr2_forecast real,\
+  yr1_forecast real,\
   yr0_plan real,\
-  yr-1_approp real,\
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb3   yr-2_oblig real,\
+  yr1_approp real,\
+  yr2_oblig real,\
+  
+\f0\b key2 VARCHAR(100),
+\f1\b0 \
 )\
 \
-\pard\pardeftab720\partightenfactor0
 
-\f0\b \cf2 \cb3 CREATE
-\f1\b0 \cb3  
-\f0\b \cb3 TABLE
-\f1\b0 \cb3  budget_table (\
+\f0\b CREATE
+\f1\b0  
+\f0\b TABLE
+\f1\b0  budget_table (\
   
-\f0\b \cb3 key VARCHAR(200),
-\f1\b0 \cb3 \
+\f0\b key VARCHAR(200),
+\f1\b0 \
   project \cf4 VARCHAR\cf2 (\cf5 50\cf2 ),\
   subproject \cf4 VARCHAR\cf2 (\cf5 50\cf2 ),\
   rca \cf4 VARCHAR\cf2 (\cf5 50\cf2 ),\
   program_title \cf4 VARCHAR\cf2 (\cf5 50\cf2 ),\
   usd_vale,\
-  month integer,\
-  year integer,\
+  month int,\
+  year int,\
   oblig real,\
   total_authority real,\
   executed real,\
@@ -53,4 +50,13 @@ CREATE
   exe_ta_rate real,\
   exe_oblig_rate real\
 )\
+\
+\
+\
+COPY persons(project,subproject,program_title,rca,yr3_forecast,yr2_forecast,yr1_forecast,yr0_plan,yr1_approp,yr2_oblig,key)\
+FROM '/Users/patrickbenitez/Desktop/GT/Codebook/Git/Py.randomizer/synthetic_v1'\
+DELIMITER ','\
+CSV HEADER;\
+\
+\
 }
